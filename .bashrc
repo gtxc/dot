@@ -39,8 +39,6 @@ alias yay='yay --answerclean A --answerdiff N --editmenu --answeredit A'
 alias cleanpkgcache='yes | yay -Sccd'
 alias neo='neo --fps=30 --speed=5 -D -d 0.5 -l 1,1 --charset=ascii'
 alias lvim='NVIM_APPNAME=nvim-lazy nvim'
-alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-alias yolo="git add -A && git commit -m '$(curl -s https://whatthecommit.com/index.txt)' && git pull --rebase && git push"
 
 PS1='[\u@\h \W]\$ '
 
