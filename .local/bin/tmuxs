@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+if tmux has-session -t home 2>/dev/null; then
+  if tmux list-sessions | grep -q "home.*(attached)"; then
+    session_number=1
+    while tmux has-session -t "h${session_number}me" 2>/dev/null; do
+      session_number=$((session_number + 1))
+    done
+    tmux new-session -s "h${session_number}me"
+  else
+    tmux attach-session -t home
+  fi
+else
+  tmux new-session -s home
+fi
+
