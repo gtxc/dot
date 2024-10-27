@@ -1,0 +1,4 @@
+[alias]
+	dotfiles = !git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME
+	; yolo = !git commit -m "$(curl -s https://whatthecommit.com/index.txt)"
+	yolo = "!f() { git commit -m \"$(curl -s https://whatthecommit.com/index.txt)\"; }; f"
