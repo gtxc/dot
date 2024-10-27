@@ -24,7 +24,7 @@ return {
 						end
 						path = string.gsub(path, "oil://", "")
 						local size = vim.fn.system("du -sh " .. path .. ce.name)
-                        vim.notify(size, "info", { title = "Size" })
+                        vim.notify(size, vim.log.levels.INFO, { title = "Size" })
 					end,
 				},
 			},

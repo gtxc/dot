@@ -20,12 +20,13 @@ export HISTSIZE=10000
 export HISTFILESIZE=10000
 
 alias l='exa --icons --color=auto'
-alias ls='exa -l --git --icons --color=auto'
-alias la='exa -la --git --icons --color=auto'
+alias ls='exa -l --icons --color=auto'  # --git
+alias la='exa -la --icons --color=auto' # --git
 alias lt='exa -T --level=2 --icons --color=auto'
 alias grep='grep --color=auto'
 alias sb='source ~/.bashrc'
 alias eb='vim ~/.bashrc'
+alias pacman='sudo pacman'
 alias pacsyu='sudo pacman -Syy && checkupdates && echo '' && sudo pacman -Syu'
 alias vim='nvim'
 alias fed='(find /home/gt -type d -not -path "/home/gt/gt.bak/*" -print | fzf --print0) | xargs -0 -r -o nvim'
@@ -56,6 +57,3 @@ cdfzfselect() {
 }
 eval "$(fzf --bash)"
 eval "$(starship init bash)"
-
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash

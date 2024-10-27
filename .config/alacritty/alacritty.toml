@@ -1,6 +1,7 @@
+[general]
 import = ["~/.config/alacritty/rose-pine.toml"]
 
-[shell]
+[terminal.shell]
 program = "/home/gt/.local/bin/tmuxs"
 
 [env]
@@ -14,6 +15,7 @@ size = 10
 padding = {x = 4, y = 2}
 startup_mode = "Maximized"
 decorations = "None"
+opacity = 0.95
 
 [colors]
 # primary.background = '#333333'
