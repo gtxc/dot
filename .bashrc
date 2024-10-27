@@ -29,9 +29,9 @@ alias eb='vim ~/.bashrc'
 alias pacman='sudo pacman'
 alias pacsyu='sudo pacman -Syy && checkupdates && echo '' && sudo pacman -Syu'
 alias vim='nvim'
-alias fed='(find /home/gt -type d -not -path "/home/gt/gt.bak/*" -print | fzf --print0) | xargs -0 -r -o nvim'
-alias fef='(find /home/gt -type f -not -path "/home/gt/gt.bak/*" -print | fzf --print0) | xargs -0 -r -o nvim'
-alias ws='cdfzfselect /home/gt/ws 2'
+alias fed='(find $HOME -type d -not -path "$HOME/gt.bak/*" -print | fzf --print0) | xargs -0 -r -o nvim'
+alias fef='(find $HOME -type f -not -path "$HOME/gt.bak/*" -print | fzf --print0) | xargs -0 -r -o nvim'
+alias ws='cdfzfselect $HOME/ws 2'
 alias cat='bat'
 alias sd='shutdown now'
 alias rm='echo "This is not the command you are looking for."; false'
@@ -43,7 +43,7 @@ alias lvim='NVIM_APPNAME=nvim-lazy nvim'
 
 PS1='[\u@\h \W]\$ '
 
-# bind -x '"\ef":"cdfzfselect /home/gt/ws 2"'
+# bind -x '"\ef":"cdfzfselect $HOME/ws 2"'
 
 cdfzfselect() {
   local base_dir="$1"
