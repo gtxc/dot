@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+tmux rename-window "fzshs"
+
 if [ $# -eq 1 ]; then
   selected=$1
 else

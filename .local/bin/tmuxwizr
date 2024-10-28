@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+tmux rename-window "fzshw"
+
 if [ $# -eq 1 ]; then
   selected=$1
 else
@@ -20,5 +22,3 @@ if ! tmux has-session -t "$target" 2>/dev/null; then
 fi
 
 tmux select-window -t "$clean_name"
-shift
-tmux send-keys -t "$target" "$*"
