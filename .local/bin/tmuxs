@@ -13,4 +13,3 @@ if tmux has-session -t home 2>/dev/null; then
 else
   tmux new-session -s home
 fi
-

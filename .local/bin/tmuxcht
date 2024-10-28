@@ -1,15 +1,20 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
+
+get() {
+  printf "\n\033[1m\033[32m:: \033[37m%s\033[0m" "$2"
+  read -r "$1"
+}
 
 selected=$(cat ~/.local/bin/chtlanguages ~/.local/bin/chtcommand | fzf)
-if [[ -z $selected ]]; then
-    exit 0
+if [ -z "$selected" ]; then
+  exit 0
 fi
 
-read -p "Enter Query: " query
+get query "Enter query: "
 
 if grep -qs "$selected" ~/.local/bin/chtlanguages; then
-    query=$(echo "$query" | tr ' ' '+')
-    tmux neww bash -c "echo \"curl cht.sh/$selected/$query/\" & curl cht.sh/$selected/$query & while [ : ]; do sleep 1; done"
+  query=$(echo "$query" | tr ' ' '+')
+  tmux neww bash -c "echo \"curl cht.sh/$selected/$query/\" & curl cht.sh/$selected/$query & while [ : ]; do sleep 1; done"
 else
-    tmux neww bash -c "curl -s cht.sh/$selected~$query | less"
+  tmux neww bash -c "curl -s cht.sh/$selected~$query | less"
 fi
