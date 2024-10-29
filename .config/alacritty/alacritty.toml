@@ -2,7 +2,7 @@
 import = ["~/.config/alacritty/rose-pine.toml"]
 
 [terminal.shell]
-program = "~/.local/bin/tmuxtart"
+program = "/home/gt/.local/bin/tmuxtart"
 
 [env]
 TERM = "xterm-256color"

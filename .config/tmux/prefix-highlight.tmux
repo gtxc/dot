@@ -94,10 +94,10 @@ main() {
   highlight="#{?client_prefix,$prefix_mode,$fallback}#[default]"
 
   status_left_value="$(tmux_option "status-left")"
-  tmux set-option -gq "status-left" "${status_left_value}${place_holder}${highlight}"
+  tmux set-option -gq "status-left" "$(echo "$status_left_value" | sed "s/$place_holder/$highlight/g")"
 
   status_right_value="$(tmux_option "status-right")"
-  tmux set-option -gq "status-right" "${status_right_value}${place_holder}${highlight}"
+  tmux set-option -gq "status-right" "$(echo "$status_right_value" | sed "s/$place_holder/$highlight/g")"
 }
 
 main
