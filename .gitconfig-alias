@@ -1,4 +1,3 @@
 [alias]
 	dotfiles = !git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME
-	; yolo = !git commit -m "$(curl -s https://whatthecommit.com/index.txt)"
-	yolo = "!f() { git commit -m \"$(curl -s https://whatthecommit.com/index.txt)\"; }; f"
+	ycommit = "!gitcommit() { msg=\"\"; murl=\"https://whatthecommit.com/index.txt\"; while [ ! \"$ans\" = \"y\" ]; do msg=\"$(curl -s $murl)\"; printf \"msg: %s\n\" \"$msg\"; printf \"y?: \"; read -r ans; done; if [ \"$ans\" = \"y\" ]; then git commit -m \"$msg\"; fi; }; gitcommit"

@@ -3,3 +3,8 @@
 -- Add any additional options here
 
 -- vim.o.showtabline = 0
+
+local function get_main(opts)
+  opts = opts or {}
+  local bottom = opts.statusline and vim.o.cmdheight
+end

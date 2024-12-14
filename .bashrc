@@ -34,16 +34,21 @@ alias fef='(find $HOME -type f -not -path "$HOME/gt.bak/*" -print | fzf --print0
 alias ws='cdfzfselect $HOME/ws 2'
 alias cat='bat'
 alias sd='shutdown now'
+alias rb='sudo reboot now'
 alias rm='echo "This is not the command you are looking for."; false'
 alias rmm='trash-put'
 alias yay='yay --answerclean A --answerdiff N --editmenu --answeredit A'
 alias cleanpkgcache='yes | yay -Sccd'
 alias neo='neo --fps=30 --speed=5 -D -d 0.5 -l 1,1 --charset=ascii'
 alias lvim='NVIM_APPNAME=nvim-lazy nvim'
+alias lvimog='NVIM_APPNAME=nvim-lazy-og nvim'
+alias oil='vim .'
 
 PS1='[\u@\h \W]\$ '
 
 # bind -x '"\ef":"cdfzfselect $HOME/ws 2"'
+# bind -x '"\C-f":"tmux neww -t :0 ~/.local/bin/tmuxsizr"'
+# bind -x '"\C-g":"tmux neww -t :0 ~/.local/bin/tmuxwizr"'
 
 cdfzfselect() {
   local base_dir="$1"
