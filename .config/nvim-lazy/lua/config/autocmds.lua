@@ -9,12 +9,11 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("gt_" .. name, { clear = true })
 end
 
-local general = augroup("neral")
+local general = augroup("general")
 
--- autocmd({ "BufEnter", "BufNewFile" }, {
---   callback = function()
---     vim.o.showtabline = 0
+-- autocmd({ "BufEnter", "BufNewFile" }, { callback = function()
 --   end,
+--     vim.o.showtabline = 0
 --   group = general,
 --   desc = "Disable Tabline",
 -- })
@@ -25,4 +24,12 @@ autocmd("User", {
   end,
   group = general,
   desc = "redraw alpha",
+})
+
+autocmd("ColorScheme", {
+  desc = "Reverse Selection Color",
+  group = general,
+  callback = function()
+    vim.api.nvim_set_hl(0, "Visual", { nil, nil, reverse = true })
+  end,
 })

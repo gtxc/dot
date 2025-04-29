@@ -1,0 +1,33 @@
+theme = rose-pine
+background = 1b1919
+cursor-invert-fg-bg = true
+# background-opacity = 0.97
+
+command = "/home/gt/.local/bin/tmuxtart"
+
+font-size = 10
+# font-family = JetBrains Mono
+font-family = Maple Mono
+font-family = Symbols Nerd Font Mono
+
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 0
+
+gtk-titlebar = false
+# window-padding-x = 0
+# window-padding-y = 0
+window-padding-balance = true
+maximize = true
+
+copy-on-select = clipboard
+shell-integration-features = no-cursor,no-sudo,no-title
+
+keybind = alt+one=unbind
+keybind = alt+two=unbind
+keybind = alt+three=unbind
+keybind = alt+four=unbind
+keybind = alt+five=unbind
+keybind = alt+six=unbind
+keybind = alt+seven=unbind
+keybind = alt+eight=unbind
+keybind = alt+nine=unbind

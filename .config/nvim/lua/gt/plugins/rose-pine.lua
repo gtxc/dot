@@ -9,7 +9,7 @@ return {
 				transparency = true,
 			},
 			highlight_groups = {
-				CursorLineNr = { fg = "#f6c177", bold = true },
+				CursorLineNr = { fg = "gold", bold = true },
 			},
 		})
 		vim.cmd.colorscheme("rose-pine")

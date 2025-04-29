@@ -16,9 +16,8 @@ local general = augroup("general")
 autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
 	group = general,
-	callback = function()
-		vim.highlight.on_yank()
-	end,
+	callback = function() end,
+	vim.highlight.on_yank(),
 })
 
 autocmd("BufEnter", {
@@ -35,4 +34,12 @@ autocmd({ "BufEnter", "BufNewFile" }, {
 	end,
 	group = general,
 	desc = "Disable Tabline",
+})
+
+autocmd("ColorScheme", {
+	desc = "Reverse Selection Color",
+	group = general,
+	callback = function()
+		vim.api.nvim_set_hl(0, "Visual", { nil, nil, reverse = true })
+	end,
 })

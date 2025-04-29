@@ -2,13 +2,14 @@
 
 msg=""
 murl="https://whatthecommit.com/index.txt"
-while [ ! "$ans" = "y" ]; do
-  msg=$(curl -s "$murl")
-  printf "msg: %s\n" "$msg"
+
+while [ ! "${ans}" = "y" ]; do
+  msg=$(curl -s "${murl}")
+  printf "msg: %s\n" "${msg}"
   printf "y?: "
   read -r ans
 done
 
-if [ "$ans" = "y" ]; then
-  git commit -m "$msg"
+if [ "${ans}" = "y" ] && [ -n "${msg}" ]; then
+  git commit -m "${msg}"
 fi

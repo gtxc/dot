@@ -7,14 +7,14 @@ get() {
   read -r "$1"
 }
 
-selected=$(cat ~/.local/bin/chtlanguages ~/.local/bin/chtcommand | fzf)
+selected=$(cat ~/.local/bin/chtlanguage ~/.local/bin/chtcommand | fzf)
 if [ -z "$selected" ]; then
   exit 0
 fi
 
 get query "Enter query: "
 
-if grep -qs "$selected" ~/.local/bin/chtlanguages; then
+if grep -qs "$selected" ~/.local/bin/chtlanguage; then
   query=$(echo "$query" | tr ' ' '+')
   tmux neww bash -c "echo \"curl cht.sh/$selected/$query/\" & curl cht.sh/$selected/$query & while [ : ]; do sleep 1; done"
 else

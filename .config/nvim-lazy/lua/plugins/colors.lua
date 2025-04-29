@@ -4,6 +4,7 @@ return {
     as = "rose-pine",
     config = function()
       require("rose-pine").setup({
+        -- variant = "auto", -- auto, main, moon, dawn
         styles = {
           transparency = true,
         },

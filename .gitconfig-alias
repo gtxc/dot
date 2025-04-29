@@ -1,3 +1,12 @@
 [alias]
-	dotfiles = !git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME
+	dot = !git --git-dir=$HOME/.dot/ --work-tree=$HOME
 	ycommit = "!gitcommit() { msg=\"\"; murl=\"https://whatthecommit.com/index.txt\"; while [ ! \"$ans\" = \"y\" ]; do msg=\"$(curl -s $murl)\"; printf \"msg: %s\n\" \"$msg\"; printf \"y?: \"; read -r ans; done; if [ \"$ans\" = \"y\" ]; then git commit -m \"$msg\"; fi; }; gitcommit"
+    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate --date=short --color --decorate
+;[include]
+;  path = ~/.gitconfig-alias
+;[credential]
+;  helper = /usr/lib/git-core/git-credential-libsecret
+;[core]
+;  editor = nvim
+
+

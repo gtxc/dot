@@ -5,7 +5,7 @@ tmux rename-window "fss"
 if [ $# -eq 1 ]; then
   selected=$1
 else
-  selected=$(find ~/ws/* ~/ws/**/* ~/.config/nvim ~/.config/tmux ~/projects ~/work ~/personal -mindepth 0 -maxdepth 0 -type d | fzf)
+  selected=$(find ~/ws/* ~/ws/**/* ~/.config/nvim ~/.config/tmux ~/.local/bin ~/projects ~/work ~/personal -mindepth 0 -maxdepth 0 -type d | fzf)
 fi
 
 if [ -z "$selected" ]; then
